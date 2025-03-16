@@ -1,0 +1,114 @@
+1. Manajemen File & Direktori
+ls – Menampilkan daftar file dan folder.
+ls -l – Menampilkan daftar file dengan detail.
+ls -a – Menampilkan semua file, termasuk yang tersembunyi.
+cd [direktori] – Berpindah ke direktori tertentu.
+cd .. – Kembali ke direktori sebelumnya.
+pwd – Menampilkan direktori saat ini.
+mkdir [nama_direktori] – Membuat folder baru.
+rmdir [nama_direktori] – Menghapus folder kosong.
+rm [file] – Menghapus file.
+rm -r [direktori] – Menghapus folder dan isinya.
+cp [file] [tujuan] – Menyalin file ke lokasi lain.
+cp -r [folder] [tujuan] – Menyalin folder beserta isinya.
+mv [file] [tujuan] – Memindahkan atau mengganti nama file.
+find [direktori] -name [nama_file] – Mencari file berdasarkan nama.
+locate [nama_file] – Mencari file dengan database.
+
+2. Manajemen File & Teks
+cat [file] – Menampilkan isi file.
+tac [file] – Menampilkan isi file secara terbalik.
+less [file] – Melihat isi file dengan navigasi mudah.
+more [file] – Melihat isi file halaman per halaman.
+head -n 10 [file] – Menampilkan 10 baris pertama file.
+tail -n 10 [file] – Menampilkan 10 baris terakhir file.
+grep "teks" [file] – Mencari teks dalam file.
+grep -i "teks" [file] – Mencari teks tanpa membedakan huruf besar/kecil.
+sed 's/kata1/kata2/g' [file] – Mengganti kata dalam file.
+awk '{print $1}' [file] – Menampilkan kolom pertama dari file.
+
+3. Manajemen Izin File
+chmod 777 [file] – Memberikan semua izin ke file.
+chmod 644 [file] – Memberikan izin baca & tulis ke pemilik, hanya baca ke yang lain.
+chown user:user [file] – Mengubah pemilik file.
+chgrp [group] [file] – Mengubah grup kepemilikan file.
+
+4. Manajemen Proses
+ps – Menampilkan daftar proses yang berjalan.
+top – Menampilkan proses aktif dan penggunaan sumber daya.
+htop – Tampilan interaktif dari proses yang berjalan (butuh instalasi).
+kill [PID] – Menghentikan proses berdasarkan PID.
+killall [nama_proses] – Menghentikan semua proses dengan nama tertentu.
+pkill [nama_proses] – Menghentikan proses dengan pola nama tertentu.
+nohup [perintah] & – Menjalankan perintah di background.
+jobs – Menampilkan daftar pekerjaan yang berjalan di background.
+fg [job_id] – Membawa pekerjaan background ke foreground.
+bg [job_id] – Menjalankan pekerjaan di background.
+
+5. Manajemen Paket
+(Debian/Ubuntu - apt)
+sudo apt update – Memperbarui daftar paket.
+sudo apt upgrade – Memperbarui semua paket yang terinstal.
+sudo apt install [paket] – Menginstal paket baru.
+sudo apt remove [paket] – Menghapus paket.
+sudo apt autoremove – Menghapus paket yang tidak dibutuhkan.
+dpkg -i [file.deb] – Menginstal paket .deb secara manual.
+(RedHat/CentOS - yum/dnf)
+sudo yum update – Memperbarui semua paket.
+sudo yum install [paket] – Menginstal paket baru.
+sudo yum remove [paket] – Menghapus paket.
+
+6. Manajemen Disk & Storage
+df -h – Menampilkan penggunaan disk.
+du -sh [folder] – Menampilkan ukuran folder.
+lsblk – Menampilkan daftar perangkat penyimpanan.
+mount /dev/sdX /mnt – Mount perangkat penyimpanan.
+umount /mnt – Unmount perangkat penyimpanan.
+
+7. Manajemen User
+whoami – Menampilkan user saat ini.
+who – Menampilkan daftar user yang login.
+id [user] – Menampilkan informasi user.
+useradd [user] – Menambahkan user baru.
+passwd [user] – Mengubah password user.
+usermod -aG [group] [user] – Menambahkan user ke grup.
+userdel [user] – Menghapus user.
+
+8. Jaringan & Internet
+ping google.com – Mengecek koneksi ke server.
+wget [url] – Mengunduh file dari internet.
+curl -O [url] – Mengunduh file dengan curl.
+curl -I [url] – Menampilkan header HTTP dari website.
+netstat -tulnp – Menampilkan daftar koneksi jaringan.
+ss -tulnp – Alternatif dari netstat.
+ifconfig – Menampilkan informasi jaringan (deprecated).
+ip addr show – Menampilkan alamat IP.
+traceroute google.com – Melihat jalur jaringan ke server.
+nslookup google.com – Melihat informasi DNS.
+
+9. Arsip & Kompresi
+tar -cvf file.tar [folder] – Membuat arsip tar.
+tar -xvf file.tar – Mengekstrak arsip tar.
+tar -czvf file.tar.gz [folder] – Membuat arsip terkompresi gzip.
+tar -xzvf file.tar.gz – Mengekstrak arsip gzip.
+zip -r file.zip [folder] – Membuat arsip zip.
+unzip file.zip – Mengekstrak file zip.
+
+10. Monitoring Sistem
+uptime – Menampilkan durasi uptime sistem.
+free -h – Menampilkan penggunaan RAM.
+vmstat – Menampilkan informasi kinerja sistem.
+iostat – Menampilkan statistik I/O disk.
+sar -u 5 10 – Menampilkan statistik CPU setiap 5 detik.
+
+11. Keamanan
+sudo – Menjalankan perintah sebagai administrator.
+history – Melihat riwayat perintah yang telah dijalankan.
+chmod 400 file.pem – Mengatur izin file menjadi hanya baca.
+ufw enable – Mengaktifkan firewall (Ubuntu).
+ufw allow 22 – Membuka port 22 untuk SSH.
+
+12. SSH & Remote Login
+ssh user@server – Login ke server via SSH.
+scp file user@server:/path – Mengirim file ke server.
+rsync -avz file user@server:/path – Menyinkronkan file dengan server.
